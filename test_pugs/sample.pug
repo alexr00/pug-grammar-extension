@@ -1,0 +1,36 @@
+
+footer.footer
+    .container
+        .columns.is-centered
+            .column.is-one-third
+                p.subtitle.has-text-secondary
+                    b-icon(icon="map")
+                    span &nbsp;Sitemap
+                ul
+                    li: custom-link.has-text-primary(to="/")
+                        b-icon(icon="home")
+                        span &nbsp;Home
+                    li
+                        custom-link.has-text-primary(to="/")
+                            b-icon(icon="home")
+                            span &nbsp;Home
+
+#history
+    section.section
+        .container
+            .columns.is-centered
+                .column.is-6
+                    .timeline
+                        TimeLineEvent(v-for="(event, index) in history" :event="event" :index="index")
+                .column.is-2.sticky
+                    .timeline
+                        TimeLineEvent(v-for="(event, index) in history", :event="event", :index="index")
+
+.example
+    p: span Text inside span element
+    p #[span Text inside interpolated span element]
+
+p.
+  This is a very long and boring paragraph that spans multiple lines.
+  Suddenly there is a #[strong strongly worded phrase] that cannot be
+  #[em ignored].

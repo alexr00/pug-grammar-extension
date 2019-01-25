@@ -1,0 +1,48 @@
+{
+    "name": "pug",
+    "displayName": "pug-grammar-extension",
+    "description": "pug grammar for vscode",
+    "version": "0.0.1",
+    "license": "Unlicense",
+    "engines": {
+        "vscode": "^1.30.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/neilsoult/pug-grammar-extension.git"
+    },
+    "contributes": {
+        "languages": [
+            {
+                "id": "pug",
+                "aliases": [
+                    "Pug",
+                    "pug",
+                    "Jade",
+                    "jade"
+                ],
+                "extensions": [
+                    ".pug",
+                    ".jade"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "pug",
+                "scopeName": "text.pug",
+                "path": "./syntaxes/Pug.tmLanguage.json"
+            }
+        ]
+    },
+    "devDependencies": {
+        "js-yaml": "^3.12.1"
+    },
+    "scripts": {
+        "postinstall": "js-yaml syntaxes/Pug.tmLanguage.yaml > syntaxes/Pug.tmLanguage.json"
+    }
+}
